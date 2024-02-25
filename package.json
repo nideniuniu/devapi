@@ -1,0 +1,37 @@
+{
+    "name": "devapi",
+    "version": "2022.12.16+01",
+    "description": "",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "scripts": {
+        "prepublish": "npm run build",
+        "go-publish": "npm publish --access public",
+        "dev": "rm -fr ./dist && tsc -p tsconfig.dev.json",
+        "build": "rm -fr ./dist && tsc -p tsconfig.prod.json",
+        "example": "npm run dev && node ./example/index.js",
+        "test": "ts-mocha -p ./tsconfig.test.json ./test/*"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "http://192.168.3.197/tt/ts_api.git"
+    },
+    "devDependencies": {
+        "@types/chai": "^4.1.7",
+        "@types/mocha": "^5.2.5",
+        "chai": "^4.2.0",
+        "gulp-typedoc": "^3.0.1",
+        "mocha": "^5.2.0",
+        "ts-mocha": "^2.0.0",
+        "tslint": "^5.11.0",
+        "tslint-config-airbnb": "^5.11.1",
+        "typescript": "^3.2.1"
+    },
+    "dependencies": {
+        "tsc": "^2.0.4",
+        "xmlhttprequest": "^1.8.0"
+    }
+}
